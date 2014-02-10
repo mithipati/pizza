@@ -84,6 +84,7 @@ describe Pizza do
     it 'determines if the pizza was delivered late' do
       pizza = Pizza.new
       pizza.deliver!
+      pizza.delivered
 
       expect(pizza.late?).to eq(false)
     end
