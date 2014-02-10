@@ -35,9 +35,17 @@ describe Pizza do
         Topping.new('spinach', vegetarian: true)
       ]
 
-      pizza = Pizza.new(toppings)
+      toppings2 = [
+        Topping.new('mushrooms', vegetarian: true),
+        Topping.new('olives', vegetarian: true),
+        Topping.new('spinach', vegetarian: true)
+      ]
 
-      expect(pizza.vegetarian?).to eql(true)
+      pizza = Pizza.new(toppings)
+      pizza1 = Pizza.new(toppings2)
+
+      expect(pizza.vegetarian?).to eql(false)
+      expect(pizza1.vegetarian?).to eql(true)
     end
 
   end

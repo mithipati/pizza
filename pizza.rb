@@ -4,6 +4,10 @@ class Pizza
     @toppings = toppings
   end
 
+  def vegetarian?
+    @toppings.all? { |topping| topping.vegetarian == true }
+  end
+
 end
 
 class Topping
