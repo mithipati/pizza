@@ -12,6 +12,7 @@ describe Pizza do
         Topping.new('mushrooms', vegetarian: true),
         Topping.new('pepperoni')
       ]
+
       pizza = Pizza.new(toppings)
 
       expect(pizza.toppings).to eq(toppings)
