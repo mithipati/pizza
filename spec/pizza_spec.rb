@@ -65,8 +65,28 @@ describe Pizza do
       pizza = Pizza.new(toppings)
 
       expect(pizza.add_topping(new_topping)).to eq(new_topping)
+      expect(pizza.toppings.count).to eq(4)
+    end
+  end
+
+  describe 'deliver!' do
+
+    it 'sends out a pizza and marks down the delivery time' do
+      pizza = Pizza.new
+
+      expect(pizza.deliver!).to_not eq(Time.now)
     end
 
+  end
+
+  describe 'late?' do
+
+    it 'determines if the pizza was delivered late' do
+      pizza = Pizza.new
+      pizza.deliver!
+
+      expect(pizza.late?).to eq(false)
+    end
 
   end
 
