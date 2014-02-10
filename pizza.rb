@@ -3,6 +3,7 @@ class Pizza
   def initialize( toppings = [ Topping.new('cheese') ] )
     @toppings = toppings
   end
+
 end
 
 class Topping
