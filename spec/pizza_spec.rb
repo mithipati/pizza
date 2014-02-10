@@ -47,6 +47,26 @@ describe Pizza do
       expect(pizza.vegetarian?).to eql(false)
       expect(pizza1.vegetarian?).to eql(true)
     end
+  end
+
+  describe 'add_topping' do
+
+    it 'adds a topping to the existing toppings array' do
+      toppings = [
+        Topping.new('mushrooms', vegetarian: true),
+        Topping.new('pepperoni'),
+        Topping.new('spinach', vegetarian: true)
+      ]
+
+      new_topping = [
+        Topping.new('sausage')
+      ]
+
+      pizza = Pizza.new(toppings)
+
+      expect(pizza.add_topping(new_topping)).to eq(new_topping)
+    end
+
 
   end
 
